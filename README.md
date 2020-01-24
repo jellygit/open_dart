@@ -25,6 +25,7 @@
    ```
    https://opendart.fss.or.kr/api/fnlttSinglAcnt.json?crtfc_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&corp_code=00126380&bsns_year=2019&reprt_code=11013
    ```
+      1. 주의점: corp_code 인자는 위에서 설명한 회사 코드임에 주의(종목코드가 아니다). corpCode.xml 에 요청한 파일 참조.
    1. 예제: 메리츠종금증권 사업연도 2018년 사업보고서 배당정보 조회
    ```
    https://opendart.fss.or.kr/api/alotMatter.json?crtfc_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&corp_code=00163682&bsns_year=2018&reprt_code=11011
