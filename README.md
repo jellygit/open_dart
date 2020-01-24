@@ -21,12 +21,13 @@
 1. 인증키를 먼저 받는다.
 1. '상세주소'에 요청 인자를 넣는다. URL과 요청인자 사이는 '?' 로 연결하고, 각 인자는 '&'으로 연결해 여러 인자를 넘겨줄 수 있다.
 1. 각 인자에 값 지정은 '='로 한다. 아래 예시 참조
-   1. 예제: 삼성전자 사업연도 2019년 1분기 재무정보 조회 (crtfc_key 항목은 자신의 키를 넣어야 함.)
+   1. 예제 1 : 삼성전자 사업연도 2019년 1분기 재무정보 조회 (crtfc_key 항목은 자신의 키를 넣어야 함.)
    ```
    https://opendart.fss.or.kr/api/fnlttSinglAcnt.json?crtfc_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&corp_code=00126380&bsns_year=2019&reprt_code=11013
    ```
-      1. 주의점: corp_code 인자는 위에서 설명한 회사 코드임에 주의(종목코드가 아니다). corpCode.xml 에 요청한 파일 참조.
-   1. 예제: 메리츠종금증권 사업연도 2018년 사업보고서 배당정보 조회
+      1. 주의점: corp_code 인자는 위에서 설명한 회사 코드임에 주의(종목코드가 아니다). corpCode.xml 에 요청해 다운로드한 파일에서 찾아서 입력.
+
+   1. 예제 2: 메리츠종금증권 사업연도 2018년 사업보고서 배당정보 조회
    ```
    https://opendart.fss.or.kr/api/alotMatter.json?crtfc_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&corp_code=00163682&bsns_year=2018&reprt_code=11011
    ```
