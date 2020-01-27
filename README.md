@@ -5,13 +5,17 @@
 
 # 기본 사항
 1. https://opendart.fss.or.kr/
-1. 계정 만들고(이메일) 약관 동의 후 메일로 오는 인증 링크 클릭
-1. 인증키 신청/관리에서 API 인증키 확인.
-1. 종목코드(stock_code. HTS, MTS 등에서 사용하는)와 Open API에서 사용하는 회사 코드 (corp_code)는 다르다. 처음에 고유번호부터 확보해야 한다.
+1. 개인은 일일 10,000 건 요청 가능
+2. 기업
+  1. 공시목록, 기업개황: 한도 없음
+  2. 공시원문, 사업 보고서 주요정보 등 신규 서비스 21 종: 일 10,000 건(서비스별이 아닌 전체 기준)
+3. 계정 만들고(이메일) 약관 동의 후 메일로 오는 인증 링크 클릭
+4. 인증키 신청/관리에서 API 인증키 확인.
+5. 종목코드(stock_code. HTS, MTS 등에서 사용하는)와 Open API에서 사용하는 회사 코드 (corp_code)는 다르다. 처음에 고유번호부터 확보해야 한다.
    1. 비상장 회사 등의 중요사항 공시에 관한 규정이 있다. 
-   1. 종목코드 없는 비상장사 정보조회하려면 당연.
-   1. https://opendart.fss.or.kr/api/corpCode.xml?crtfc_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 로 요청하면 Zip으로 압축된 xml 파일을 다운로드 가능.
-1. xml 혹은 json으로 요청하면 해당 포멧 혹은 파일을 받을 수 있음.
+   2. 종목코드 없는 비상장사 정보조회하려면 당연.
+   3. https://opendart.fss.or.kr/api/corpCode.xml?crtfc_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 로 요청하면 Zip으로 압축된 xml 파일을 다운로드 가능.
+6. xml 혹은 json으로 요청하면 해당 포멧 혹은 파일을 받을 수 있음.
 
 
 # 완전 뉴비를 위한 API 설명
@@ -33,3 +37,9 @@
    ```
 1. API 인증키, 고유번호, 사업연도, 보고서 코드는 기본으로 많이 사용됨.
 1. Perl, Python, JAVA 등으로 각 종목, 연도, 분기 등을 다양하게 조합해서 돌아오는 결과를 DB에 넣으면 활용하기 좋을듯.
+
+# 사용법
+## xml_to_sql.py
+미리 받은 corp_code.xml 파일을 sqlite3 에 넣는 스크립트. 일반파일 읽어서 넣는 방법은 할줄 몰라서 로컬 웹 사이트에서 받아서 넣는 무식한 방법을 사용.
+
+테이블이 이미 존재할 경우 덮어씌움.

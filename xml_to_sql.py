@@ -9,6 +9,7 @@ CONN = sqlite3.connect("db/code.db")
 # open dart corp_code.zip 파일 다운로드 하고 자체 웹 데몬에서 접근 가능한 경우
 url = "https://localhost/CORPCODE.xml"
 
+
 response = urlopen(url).read()
 xtree = ET.fromstring(response)
 
@@ -26,5 +27,5 @@ for node in xtree:
 
 out_df = pd.DataFrame(rows, columns = df_cols)
 
-out_df.to_sql('code', CONN)
+out_df.to_sql('code', CONN, if_exists='replace')
 # out_df.to_csv('code.csv')
